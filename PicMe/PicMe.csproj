@@ -1,0 +1,925 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC04157C-4277-49EF-9ADD-6AEC06F16BF3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PicMe</RootNamespace>
+    <AssemblyName>PicMe</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AlphaBlendTextBox">
+      <HintPath>C:\Users\warma\Downloads\Project ISA\AlphaBlendTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
+    <Reference Include="Bunifu.UI.WinForms.1.5.3">
+      <HintPath>C:\Users\warma\Downloads\Project ISA\BunifuCrack-main\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
+      <HintPath>..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
+      <HintPath>..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>..\..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
+      <HintPath>C:\Users\warma\Downloads\Project ISA\BunifuCrack-main\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="db.cs" />
+    <Compile Include="FormAnotherUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnotherUser.Designer.cs">
+      <DependentUpon>FormAnotherUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotFound404.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NotFound404.Designer.cs">
+      <DependentUpon>NotFound404.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewUser.Designer.cs">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPost.Designer.cs">
+      <DependentUpon>AddPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BannerNotif.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BannerNotif.Designer.cs">
+      <DependentUpon>BannerNotif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BeforeSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BeforeSearch.Designer.cs">
+      <DependentUpon>BeforeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommentDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommentDialog.Designer.cs">
+      <DependentUpon>CommentDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>db.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Followers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Followers.Designer.cs">
+      <DependentUpon>Followers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Following.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Following.Designer.cs">
+      <DependentUpon>Following.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFollowers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFollowers.Designer.cs">
+      <DependentUpon>FormFollowers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChange.Designer.cs">
+      <DependentUpon>FormChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFollowing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFollowing.Designer.cs">
+      <DependentUpon>FormFollowing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearch.Designer.cs">
+      <DependentUpon>FormSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetNewPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetNewPassword.Designer.cs">
+      <DependentUpon>FormSetNewPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormForgot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormForgot.Designer.cs">
+      <DependentUpon>FormForgot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVerify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVerify.Designer.cs">
+      <DependentUpon>FormVerify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewHastag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewHastag.Designer.cs">
+      <DependentUpon>NewHastag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListItem.Designer.cs">
+      <DependentUpon>ListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListPosts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListPosts.Designer.cs">
+      <DependentUpon>ListPosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListSuggest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListSuggest.Designer.cs">
+      <DependentUpon>ListSuggest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notifikasi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Notifikasi.Designer.cs">
+      <DependentUpon>Notifikasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Post.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Post.Designer.cs">
+      <DependentUpon>Post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddPost.resx">
+      <DependentUpon>AddPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BannerNotif.resx">
+      <DependentUpon>BannerNotif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BeforeSearch.resx">
+      <DependentUpon>BeforeSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommentDialog.resx">
+      <DependentUpon>CommentDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Followers.resx">
+      <DependentUpon>Followers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Following.resx">
+      <DependentUpon>Following.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnotherUser.resx">
+      <DependentUpon>FormAnotherUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChange.resx">
+      <DependentUpon>FormChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFollowers.resx">
+      <DependentUpon>FormFollowers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFollowing.resx">
+      <DependentUpon>FormFollowing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormForgot.resx">
+      <DependentUpon>FormForgot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearch.resx">
+      <DependentUpon>FormSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetNewPassword.resx">
+      <DependentUpon>FormSetNewPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVerify.resx">
+      <DependentUpon>FormVerify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewHastag.resx">
+      <DependentUpon>NewHastag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListItem.resx">
+      <DependentUpon>ListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListPosts.resx">
+      <DependentUpon>ListPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListSuggest.resx">
+      <DependentUpon>ListSuggest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotFound404.resx">
+      <DependentUpon>NotFound404.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifikasi.resx">
+      <DependentUpon>Notifikasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Post.resx">
+      <DependentUpon>Post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUser.resx">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="db.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>db.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Identity Theft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonAddHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonDeleteHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pay Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search Client Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search Client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutpink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutpinkhover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\More pink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\isi saldo pink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paket data pink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pulsa pink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sign Out - btn hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sign Out - btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collapse Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonSaveHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cust.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notifOFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notifON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sign in - btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sign in - btn50%25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonPrint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtoPrint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bRequest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RequestHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kirim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\isi saldo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\isi saldowhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConfirmHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup66.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topup44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\77.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\88.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Basic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bestie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kirimWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonMoreHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonCancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonOK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonOKHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\i.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\More.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoreHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paket data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pulsa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paket dataWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pulsaWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doorbell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DoorbellHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test AccountHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drag List Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drag List DownHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drag List Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drag List UpHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebarhover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonSet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonSetHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonVerify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonVerifyHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonRegister.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonRegisterHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HideHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonLoginHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\i1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ii1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paket data1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pulsa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebarhover1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\991.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Email Sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonSendHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonSend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\likebold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\like.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repostbold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\komenbold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\komen2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rebold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\re.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\private.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\publicBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\public.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\privateBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sendBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\warma\Downloads\New folder %2827%29\MyPics-main\MyPics_Library\MyPics_Library.csproj">
+      <Project>{0de7c14a-996f-4d61-bd1d-fd3b0244d957}</Project>
+      <Name>MyPics_Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\offBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\onBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lonceng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loncengBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newSearchBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hastag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hastagBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newUserBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alreadyUserBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alreadyUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addUserBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\!Bold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\!.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\removeUserBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\removeUser.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
